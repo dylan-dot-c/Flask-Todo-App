@@ -8,13 +8,14 @@
   {% if tasks|length < 1 %}
   <h2 class="text-center text-underline">You currently have no tasks</h2>
 
-  {% else %} {% for task in tasks %}
+  {% else %}
   <table class="table">
     <tr>
       <th>Task</th>
       <th>Added</th>
       <th>Actions</th>
     </tr>
+    {% for task in tasks %}
     <tr>
       <td>{{ task.content }}</td>
       <td>{{ task.date_created.date()}}</td>
