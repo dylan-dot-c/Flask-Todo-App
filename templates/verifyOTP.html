@@ -1,0 +1,21 @@
+{% block body %}
+<main class="container">
+  {% if email is none %}
+  <p>No page for u</p>
+
+  {% else %}
+  <h1>Enter OTP</h1>
+  <p>
+    An OTP has been sent to your {{ email }} . Please enter it to verify
+    yourself!
+  </p>
+
+  <form action="/verify" method="POST">
+    <label for="otp" class="form-label">OTP</label>
+    <input type="number" class="form-control" name="otp" id="" otp />
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+  </form>
+  {% endif %}
+</main>
+{% endblock %}
